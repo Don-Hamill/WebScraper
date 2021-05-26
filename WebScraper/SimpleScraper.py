@@ -1,11 +1,14 @@
 def nature_scraper():
+    
     page_range = int(input("Enter the page range: "))
     article_type = input("Enter the article type: ")
     directory = os.getcwd()
+    
     for i in range(1, page_range + 1):
         r = requests.get(f"https://www.nature.com/nature/articles?searchType=journalSearch&sort=PubDate&page={i}")
         soup = BeautifulSoup(r.content, "html.parser")
         articles = soup.find_all("article")
+        
         for j in articles:
             news = j.find('span', class_="c-meta__type")
             if article_type in news:
