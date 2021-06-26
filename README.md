@@ -1,3 +1,3 @@
 # WebScraper
 
-Simple Web scraper that parses nature website using BeautifulSoup and stores articles as text files.
+Web scraper parses Nature website looking for html tags and saves the text between the tags as text files in the current working directory. 
